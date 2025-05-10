@@ -1,0 +1,8 @@
+com\store\api\model\Stock.class
+com\store\api\CustomerApi.class
+com\store\api\model\Supplier.class
+com\store\api\SupplierApi.class
+com\store\api\StockApi.class
+com\store\api\model\Customer.class
+com\store\api\model\GetStockById404Response.class
+com\store\api\ApiUtil.class
