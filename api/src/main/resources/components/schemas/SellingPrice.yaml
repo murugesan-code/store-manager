@@ -1,0 +1,13 @@
+type: object
+properties:
+  stockId:
+    type: integer
+    format: int64
+    description: Unique identifier
+  priceperUnit:
+    type: number
+    format: float
+    description: Unit price of the product
+required:
+  - stockId
+  - priceperUnit

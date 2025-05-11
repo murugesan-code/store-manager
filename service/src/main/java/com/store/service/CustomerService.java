@@ -36,10 +36,16 @@ public class CustomerService {
     }
 
     @Transactional
-    public void updateCustomer(Long customerid, String name) {
-        int updated = customerRepository.updateCustomerName(customerid, name);
-        if (updated == 0) {
-            throw new EntityNotFoundException("Customer not found with ID: " + customerid);
+    public void updateCustomer(Long customerId, Customer customer) {
+        Customer oldCustomer = getCustomerById(customerId);
+        if (oldCustomer.getName() != customer.getName()) {
+            customerRepository.updateCustomerName(customerId, customer.getName());
+        }
+        if (oldCustomer.getPhonenumber() != customer.getPhonenumber()) {
+            customerRepository.updateCustomerPhonenumber(customerId, customer.getPhonenumber());
+        }
+        if (oldCustomer.getAddress() != customer.getAddress()) {
+            customerRepository.updateCustomerAddress(customerId, customer.getAddress());
         }
     }
 

@@ -20,6 +20,14 @@ paths:
     $ref: './paths/supplier.yaml#/supplier'
   /supplier/{id}:
     $ref: './paths/supplier.yaml#/supplierById'
+  /purchaseprice:
+    $ref: './paths/purchaseprice.yaml#/purchaseprice'
+  /purchaseprice:/{id}:
+    $ref: './paths/purchaseprice.yaml#/purchasepriceById'
+  /sellingprice:
+     $ref: './paths/sellingprice.yaml#/sellingprice'
+  /sellingprice:/{id}:
+     $ref: './paths/sellingprice.yaml#/sellingpriceById'
 components:
   schemas:
     Stock:
@@ -28,3 +36,7 @@ components:
       $ref: './components/schemas/Customer.yaml'
     Supplier:
       $ref: './components/schemas/Supplier.yaml'
+    Purchaseprice:
+      $ref: './components/schemas/PurchasePrice.yaml'
+    Sellingprice:
+      $ref: './components/schemas/Sellingprice.yaml'

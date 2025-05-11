@@ -1,2 +1,6 @@
+com\store\mapper\SupplierMapper.class
 com\store\service\StockService.class
+com\store\mapper\CustomerMapper.class
+com\store\service\CustomerService.class
+com\store\service\SupplierService.class
 com\store\mapper\StockMapper.class

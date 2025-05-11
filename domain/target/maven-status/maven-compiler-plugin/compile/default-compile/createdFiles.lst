@@ -1,7 +1,9 @@
 com\store\manager\entity\StockPurchase.class
+com\store\manager\repository\SupplierRepository.class
 com\store\manager\entity\SellingPriceEntity.class
 com\store\manager\entity\SupplierEntity.class
 com\store\manager\repository\StockRepository.class
+com\store\manager\repository\CustomerRepository.class
 com\store\manager\entity\StockSales.class
 com\store\manager\entity\StockEntity.class
 com\store\manager\entity\CustomerEntity.class

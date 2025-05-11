@@ -3,7 +3,7 @@ supplier: &supplier
     summary: Get all Suppliers
     operationId: getAllSuppliers
     tags:
-      - suppliers
+      - Supplier
     responses:
       '200':
         description: A list ofsuppliers
@@ -17,7 +17,7 @@ supplier: &supplier
     summary: Create a new supplier
     operationId: createSupplier
     tags:
-      - supplier
+      - Supplier
     requestBody:
       required: true
       content:
@@ -33,7 +33,7 @@ supplierById: &supplierById
     summary: Get supplier by ID
     operationId: getSupplierById
     tags:
-      - supplier
+      - Supplier
     parameters:
       - name: id
         in: path
@@ -54,7 +54,7 @@ supplierById: &supplierById
     summary: Update a supplier
     operationId: updateSupplier
     tags:
-      - supplier
+      - Supplier
     parameters:
       - name: id
         in: path
@@ -83,7 +83,7 @@ supplierById: &supplierById
     summary: Delete a supplier
     operationId: deleteSupplier
     tags:
-      - supplier
+      - Supplier
     parameters:
       - name: id
         in: path

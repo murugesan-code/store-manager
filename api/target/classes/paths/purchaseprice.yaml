@@ -1,0 +1,98 @@
+purchaseprice: &purchaseprice
+  get:
+    summary: Get all price
+    operationId: getAllPurchasePrices
+    tags:
+      - PurchasePrice
+    responses:
+      '200':
+        description: A list of price
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '../components/schemas/PurchasePrice.yaml'
+  post:
+    summary: Create a new price
+    operationId: createPurchasePrice
+    tags:
+      - PurchasePrice
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/PurchasePrice.yaml'
+    responses:
+      '200':
+        description: Created price
+
+purchasepriceById: &purchasepriceById
+  get:
+    summary: Get price by ID
+    operationId: getPurchasePriceById
+    tags:
+      - PurchasePrice
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+    responses:
+      '200':
+        description: price found
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/PurchasePrice.yaml'
+      '404':
+        $ref: '../components/responses/NotFound.yaml'
+  put:
+    summary: Update a price
+    operationId: updatePurchasePrice
+    tags:
+      - PurchasePrice
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/PurchasePrice.yaml'
+    responses:
+      '200':
+        description: PurchasePrice updated successfully
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/PurchasePrice.yaml'
+      '400':
+        description: Invalid input
+      '404':
+        $ref: '../components/responses/NotFound.yaml'
+  delete:
+    summary: Delete a price
+    operationId: deletePurchasePrice
+    tags:
+      - PurchasePrice
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+    responses:
+      '204':
+        description: PurchasePrice deleted successfully (no content)
+      '404':
+        $ref: '../components/responses/NotFound.yaml'

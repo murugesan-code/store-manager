@@ -3,7 +3,7 @@ customer: &customer
     summary: Get all customers
     operationId: getAllCustomers
     tags:
-      - customer
+      - Customer
     responses:
       '200':
         description: A list of customers
@@ -17,7 +17,7 @@ customer: &customer
     summary: Create a new customer
     operationId: createCustomer
     tags:
-      - customer
+      - Customer
     requestBody:
       required: true
       content:
@@ -33,7 +33,7 @@ customerById: &customerById
     summary: Get customer by ID
     operationId: getCustomerById
     tags:
-      - customer
+      - Customer
     parameters:
       - name: id
         in: path
@@ -54,7 +54,7 @@ customerById: &customerById
     summary: Update a customer
     operationId: updateCustomer
     tags:
-      - customer
+      - Customer
     parameters:
       - name: id
         in: path
@@ -83,7 +83,7 @@ customerById: &customerById
     summary: Delete a customer
     operationId: deleteCustomer
     tags:
-      - customer
+      - Customer
     parameters:
       - name: id
         in: path

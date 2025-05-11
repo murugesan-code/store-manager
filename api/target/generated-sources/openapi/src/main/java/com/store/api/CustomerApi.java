@@ -33,9 +33,9 @@ import java.util.Map;
 import java.util.Optional;
 import jakarta.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-10T11:20:20.226063600+05:30[Asia/Calcutta]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-11T09:30:03.205722600+05:30[Asia/Calcutta]")
 @Validated
-@Tag(name = "customer", description = "the customer API")
+@Tag(name = "Customer", description = "the Customer API")
 public interface CustomerApi {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -51,7 +51,7 @@ public interface CustomerApi {
     @Operation(
         operationId = "createCustomer",
         summary = "Create a new customer",
-        tags = { "customer" },
+        tags = { "Customer" },
         responses = {
             @ApiResponse(responseCode = "200", description = "Created customer")
         }
@@ -80,7 +80,7 @@ public interface CustomerApi {
     @Operation(
         operationId = "deleteCustomer",
         summary = "Delete a customer",
-        tags = { "customer" },
+        tags = { "Customer" },
         responses = {
             @ApiResponse(responseCode = "204", description = "Customer deleted successfully (no content)"),
             @ApiResponse(responseCode = "404", description = "Resource not found", content = {
@@ -119,7 +119,7 @@ public interface CustomerApi {
     @Operation(
         operationId = "getAllCustomers",
         summary = "Get all customers",
-        tags = { "customer" },
+        tags = { "Customer" },
         responses = {
             @ApiResponse(responseCode = "200", description = "A list of customers", content = {
                 @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Customer.class)))
@@ -159,7 +159,7 @@ public interface CustomerApi {
     @Operation(
         operationId = "getCustomerById",
         summary = "Get customer by ID",
-        tags = { "customer" },
+        tags = { "Customer" },
         responses = {
             @ApiResponse(responseCode = "200", description = "customer found", content = {
                 @Content(mediaType = "application/json", schema = @Schema(implementation = Customer.class))
@@ -209,7 +209,7 @@ public interface CustomerApi {
     @Operation(
         operationId = "updateCustomer",
         summary = "Update a customer",
-        tags = { "customer" },
+        tags = { "Customer" },
         responses = {
             @ApiResponse(responseCode = "200", description = "Customer updated successfully", content = {
                 @Content(mediaType = "application/json", schema = @Schema(implementation = Customer.class))

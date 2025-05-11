@@ -20,7 +20,7 @@ import jakarta.annotation.Generated;
  */
 
 @JsonTypeName("getStockById_404_response")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-10T11:20:20.226063600+05:30[Asia/Calcutta]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-11T09:30:03.205722600+05:30[Asia/Calcutta]")
 public class GetStockById404Response {
 
   private String error;

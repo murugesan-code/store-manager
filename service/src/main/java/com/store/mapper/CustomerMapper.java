@@ -23,6 +23,7 @@ public class CustomerMapper {
         Customer dto = new Customer();
         dto.setName(customerEntity.getName());
         dto.setPhonenumber(customerEntity.getPhonenumber());
+        dto.setAddress(customerEntity.getAddress());
         return  dto;
     }
 }

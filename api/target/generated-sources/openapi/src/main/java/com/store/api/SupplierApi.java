@@ -33,9 +33,9 @@ import java.util.Map;
 import java.util.Optional;
 import jakarta.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-10T11:20:20.226063600+05:30[Asia/Calcutta]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2025-05-11T09:30:03.205722600+05:30[Asia/Calcutta]")
 @Validated
-@Tag(name = "supplier", description = "the supplier API")
+@Tag(name = "Supplier", description = "the Supplier API")
 public interface SupplierApi {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -51,7 +51,7 @@ public interface SupplierApi {
     @Operation(
         operationId = "createSupplier",
         summary = "Create a new supplier",
-        tags = { "supplier" },
+        tags = { "Supplier" },
         responses = {
             @ApiResponse(responseCode = "200", description = "Created supplier")
         }
@@ -80,7 +80,7 @@ public interface SupplierApi {
     @Operation(
         operationId = "deleteSupplier",
         summary = "Delete a supplier",
-        tags = { "supplier" },
+        tags = { "Supplier" },
         responses = {
             @ApiResponse(responseCode = "204", description = "Supplier deleted successfully (no content)"),
             @ApiResponse(responseCode = "404", description = "Resource not found", content = {
@@ -119,7 +119,7 @@ public interface SupplierApi {
     @Operation(
         operationId = "getAllSuppliers",
         summary = "Get all Suppliers",
-        tags = { "suppliers" },
+        tags = { "Supplier" },
         responses = {
             @ApiResponse(responseCode = "200", description = "A list ofsuppliers", content = {
                 @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Supplier.class)))
@@ -159,7 +159,7 @@ public interface SupplierApi {
     @Operation(
         operationId = "getSupplierById",
         summary = "Get supplier by ID",
-        tags = { "supplier" },
+        tags = { "Supplier" },
         responses = {
             @ApiResponse(responseCode = "200", description = "supplier found", content = {
                 @Content(mediaType = "application/json", schema = @Schema(implementation = Supplier.class))
@@ -209,7 +209,7 @@ public interface SupplierApi {
     @Operation(
         operationId = "updateSupplier",
         summary = "Update a supplier",
-        tags = { "supplier" },
+        tags = { "Supplier" },
         responses = {
             @ApiResponse(responseCode = "200", description = "Supplier updated successfully", content = {
                 @Content(mediaType = "application/json", schema = @Schema(implementation = Supplier.class))
