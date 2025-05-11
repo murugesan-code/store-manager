@@ -1,4 +1,4 @@
-sellingprice: &sellingprice
+sellingPrice: &sellingPrice
   get:
     summary: Get all price
     operationId: getAllSellingPrices
@@ -28,7 +28,7 @@ sellingprice: &sellingprice
       '200':
         description: Created price
 
-sellingpriceById: &sellingpriceById
+sellingPriceById: &sellingPriceById
   get:
     summary: Get price by ID
     operationId: getSellingPriceById

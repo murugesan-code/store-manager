@@ -1,10 +1,8 @@
-/*
 package com.store.web;
 
-import com.store.api.CustomerApi;
 import com.store.api.PurchasepriceApi;
-import com.store.api.model.Customer;
-import com.store.service.CustomerService;
+import com.store.api.model.Purchaseprice;
+import com.store.service.PurchasePriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -16,34 +14,31 @@ import java.util.List;
 public class PurchasePriceWeb implements PurchasepriceApi {
 
     @Autowired
-    CustomerService customerService;
+    PurchasePriceService purchasePriceService;
 
     @Override
-    public ResponseEntity<List<Customer>> getAllCustomers() {
-        return new ResponseEntity<>(customerService.getCustomers(), HttpStatusCode.valueOf(200));
+    public ResponseEntity<Void> createPurchasePrice(Purchaseprice purchaseprice) {
+        purchasePriceService.createPurchasePrice(purchaseprice);
+        return new ResponseEntity<Void>( HttpStatusCode.valueOf(200));
     }
 
     @Override
-    public ResponseEntity<Customer> getCustomerById(Long id) {
-        return new ResponseEntity<>(customerService.getCustomerById(id), HttpStatusCode.valueOf(200));
+    public ResponseEntity<List<Purchaseprice>> getAllPurchasePrices() {
+        return PurchasepriceApi.super.getAllPurchasePrices();
     }
 
     @Override
-    public ResponseEntity<Void> createCustomer(Customer customer) {
-        customerService.createCustomer(customer);
-        return new ResponseEntity<>(HttpStatusCode.valueOf(200));
+    public ResponseEntity<Purchaseprice> getPurchasePriceById(Long id) {
+        return PurchasepriceApi.super.getPurchasePriceById(id);
     }
 
     @Override
-    public ResponseEntity<Customer> updateCustomer(Long id, Customer customer) {
-        customerService.updateCustomer(id, customer);
-        return new ResponseEntity<>(customerService.getCustomerById(id), HttpStatusCode.valueOf(200));
+    public ResponseEntity<Purchaseprice> updatePurchasePrice(Long id, Purchaseprice purchaseprice) {
+        return PurchasepriceApi.super.updatePurchasePrice(id, purchaseprice);
     }
 
     @Override
-    public ResponseEntity<Void> deleteCustomer(Long id) {
-        customerService.deleteCustomer(id);
-        return new ResponseEntity<>(HttpStatusCode.valueOf(200));
+    public ResponseEntity<Void> deletePurchasePrice(Long id) {
+        return PurchasepriceApi.super.deletePurchasePrice(id);
     }
 }
-*/

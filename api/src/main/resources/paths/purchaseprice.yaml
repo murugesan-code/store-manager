@@ -1,4 +1,4 @@
-purchaseprice: &purchaseprice
+purchasePrice: &purchasePrice
   get:
     summary: Get all price
     operationId: getAllPurchasePrices
@@ -27,8 +27,7 @@ purchaseprice: &purchaseprice
     responses:
       '200':
         description: Created price
-
-purchasepriceById: &purchasepriceById
+purchasePriceById: &purchasePriceById
   get:
     summary: Get price by ID
     operationId: getPurchasePriceById

@@ -21,13 +21,13 @@ paths:
   /supplier/{id}:
     $ref: './paths/supplier.yaml#/supplierById'
   /purchaseprice:
-    $ref: './paths/purchaseprice.yaml#/purchaseprice'
-  /purchaseprice:/{id}:
-    $ref: './paths/purchaseprice.yaml#/purchasepriceById'
+    $ref: './paths/purchaseprice.yaml#/purchasePrice'
+  /purchaseprice/{id}:
+    $ref: './paths/purchaseprice.yaml#/purchasePriceById'
   /sellingprice:
-     $ref: './paths/sellingprice.yaml#/sellingprice'
-  /sellingprice:/{id}:
-     $ref: './paths/sellingprice.yaml#/sellingpriceById'
+     $ref: './paths/sellingprice.yaml#/sellingPrice'
+  /sellingprice/{id}:
+     $ref: './paths/sellingprice.yaml#/sellingPriceById'
 components:
   schemas:
     Stock:
