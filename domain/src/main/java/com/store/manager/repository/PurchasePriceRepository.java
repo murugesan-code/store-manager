@@ -18,11 +18,11 @@ public interface PurchasePriceRepository extends JpaRepository<PurchasePriceEnti
 
     Optional<PurchasePriceEntity> findById(Long id);
 
-    CustomerEntity save(CustomerEntity customer);
+    PurchasePriceEntity save(PurchasePriceEntity purchasePriceEntity);
 
     @Modifying
     @Query("UPDATE PurchasePriceEntity s SET s.pricePerUnit = :pricePerUnit WHERE s.id = :id")
-    int updateCustomerName(@Param("id") Long id, @Param("pricePerUnit") String pricePerUnit);
+    int updatePurchasePrice(@Param("id") Long id, @Param("pricePerUnit") float pricePerUnit);
 
     void deleteById(Long id);
 }

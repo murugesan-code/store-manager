@@ -19,13 +19,43 @@ import java.util.stream.Collectors;
 public class PurchasePriceService {
     @Autowired
     private PurchasePriceRepository purchasePriceRepository;
-   @Autowired
-   private StockRepository stockRepository;
+    @Autowired
+    private StockRepository stockRepository;
 
     public void createPurchasePrice(Purchaseprice purchasePrice) {
         Optional<StockEntity> stockEntity = stockRepository.findById(purchasePrice.getStockId());
-        if (stockEntity.isPresent());
-        purchasePriceRepository.save(PurchasePriceMapper.toEntity(purchasePrice,stockEntity.get()));
+        if (stockEntity.isPresent()) ;
+        purchasePriceRepository.save(PurchasePriceMapper.toEntity(purchasePrice, stockEntity.get()));
     }
+
+
+    public Purchaseprice getPurchasePriceById(Long id) {
+        Optional<PurchasePriceEntity> customer = purchasePriceRepository.findById(id);
+        return customer
+                .map(PurchasePriceMapper::toDto)
+                .orElseThrow(() -> new EntityNotFoundException("PurchasePrice not found"));
+    }
+
+    public List<Purchaseprice> getAllPurchasePrices() {
+        List<PurchasePriceEntity> purchasePrices = purchasePriceRepository.findAll();
+        return purchasePrices.stream()
+                .map(PurchasePriceMapper::toDto).collect(Collectors.toList());
+    }
+
+    @Transactional
+    public void updatePurchasePrice(Long purchasePriceId, Purchaseprice purchasePrice) {
+        Purchaseprice oldPurchasePrice = getPurchasePriceById(purchasePriceId);
+        if (oldPurchasePrice.getPriceperUnit() != purchasePrice.getPriceperUnit()) {
+            purchasePriceRepository.updatePurchasePrice(purchasePriceId, purchasePrice.getPriceperUnit());
+        }
+    }
+
+    public void deletePurchasePrice(Long id) {
+        if (!purchasePriceRepository.existsById(id)) {
+            throw new EntityNotFoundException("PurchasePrice with id " + id + " not found");
+        }
+        purchasePriceRepository.deleteById(id);
+    }
+
 }
 

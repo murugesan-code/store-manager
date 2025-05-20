@@ -1,15 +1,15 @@
 package com.store.mapper;
 
-import com.store.api.model.Purchaseprice;
-import com.store.manager.entity.PurchasePriceEntity;
+import com.store.api.model.Sellingprice;
+import com.store.manager.entity.SellingPriceEntity;
 import com.store.manager.entity.StockEntity;
 
 import java.util.Date;
 
-public class PurchasePriceMapper {
-    public static PurchasePriceEntity toEntity(Purchaseprice dto, StockEntity stock) {
+public class SellingPriceMapper {
+    public static SellingPriceEntity toEntity(Sellingprice dto, StockEntity stock) {
         if (dto == null) return null;
-        PurchasePriceEntity entity = new PurchasePriceEntity();
+        SellingPriceEntity entity = new SellingPriceEntity();
         entity.setStock(stock);
         entity.setPricePerUnit(dto.getPriceperUnit());
         entity.setCreatedDate(new Date());
@@ -17,9 +17,9 @@ public class PurchasePriceMapper {
         return entity;
     }
 
-    public static Purchaseprice toDto(PurchasePriceEntity entity) {
+    public static Sellingprice toDto(SellingPriceEntity entity) {
         if (entity == null) return null;
-        Purchaseprice dto = new Purchaseprice();
+        Sellingprice dto = new Sellingprice();
         dto.setStockId((long) entity.getStock().getId());
         dto.setPriceperUnit(dto.getPriceperUnit());
         return dto;

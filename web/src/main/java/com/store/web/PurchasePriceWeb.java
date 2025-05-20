@@ -19,26 +19,28 @@ public class PurchasePriceWeb implements PurchasepriceApi {
     @Override
     public ResponseEntity<Void> createPurchasePrice(Purchaseprice purchaseprice) {
         purchasePriceService.createPurchasePrice(purchaseprice);
-        return new ResponseEntity<Void>( HttpStatusCode.valueOf(200));
+        return new ResponseEntity<Void>(HttpStatusCode.valueOf(200));
     }
 
     @Override
     public ResponseEntity<List<Purchaseprice>> getAllPurchasePrices() {
-        return PurchasepriceApi.super.getAllPurchasePrices();
+        return new ResponseEntity<>(purchasePriceService.getAllPurchasePrices(), HttpStatusCode.valueOf(200));
     }
 
     @Override
     public ResponseEntity<Purchaseprice> getPurchasePriceById(Long id) {
-        return PurchasepriceApi.super.getPurchasePriceById(id);
+        return new ResponseEntity<>(purchasePriceService.getPurchasePriceById(id), HttpStatusCode.valueOf(200));
     }
 
     @Override
     public ResponseEntity<Purchaseprice> updatePurchasePrice(Long id, Purchaseprice purchaseprice) {
-        return PurchasepriceApi.super.updatePurchasePrice(id, purchaseprice);
+        purchasePriceService.updatePurchasePrice(id, purchaseprice);
+        return new ResponseEntity<>(getPurchasePriceById(id).getBody(),HttpStatusCode.valueOf(200));
     }
 
     @Override
     public ResponseEntity<Void> deletePurchasePrice(Long id) {
-        return PurchasepriceApi.super.deletePurchasePrice(id);
+        purchasePriceService.deletePurchasePrice(id);
+        return new ResponseEntity<>(HttpStatusCode.valueOf(200));
     }
 }
