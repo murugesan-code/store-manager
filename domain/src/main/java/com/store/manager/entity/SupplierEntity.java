@@ -1,6 +1,7 @@
 package com.store.manager.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -26,4 +27,6 @@ public class SupplierEntity {
   	private Date createdDate;
 	@Column(nullable = false,name = "modified_date")
 	private Date modifiedDate;
+	@OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<StockPurchaseEntity> purchaseList;
 }

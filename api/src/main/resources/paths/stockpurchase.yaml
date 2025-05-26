@@ -1,0 +1,97 @@
+stockPurchase: &stockPurchase
+  get:
+    summary: Get all price
+    operationId: getAllStockPurchases
+    tags:
+      - StockPurchase
+    responses:
+      '200':
+        description: A list of price
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '../components/schemas/StockPurchase.yaml'
+  post:
+    summary: Create a new price
+    operationId: createStockPurchase
+    tags:
+      - StockPurchase
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/StockPurchase.yaml'
+    responses:
+      '200':
+        description: Created price
+stockPurchaseById: &stockPurchaseById
+  get:
+    summary: Get price by ID
+    operationId: getStockPurchaseById
+    tags:
+      - StockPurchase
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+    responses:
+      '200':
+        description: price found
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/StockPurchase.yaml'
+      '404':
+        $ref: '../components/responses/NotFound.yaml'
+  put:
+    summary: Update a price
+    operationId: updateStockPurchase
+    tags:
+      - StockPurchase
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../components/schemas/StockPurchase.yaml'
+    responses:
+      '200':
+        description: StockPurchase updated successfully
+        content:
+          application/json:
+            schema:
+              $ref: '../components/schemas/StockPurchase.yaml'
+      '400':
+        description: Invalid input
+      '404':
+        $ref: '../components/responses/NotFound.yaml'
+  delete:
+    summary: Delete a price
+    operationId: deleteStockPurchase
+    tags:
+      - StockPurchase
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+    responses:
+      '204':
+        description: StockPurchase deleted successfully (no content)
+      '404':
+        $ref: '../components/responses/NotFound.yaml'

@@ -26,7 +26,7 @@ public class StockSales {
 	private SellingPriceEntity price;
 	
 	@Column(nullable = false, name = "quantity")
-	private int quantity;
+	private float quantity;
 	
 	@Column(nullable = false, name = "total_price")
 	private float total_price;

@@ -28,6 +28,10 @@ paths:
      $ref: './paths/sellingprice.yaml#/sellingPrice'
   /sellingprice/{id}:
      $ref: './paths/sellingprice.yaml#/sellingPriceById'
+  /stockpurchase:
+    $ref: './paths/stockpurchase.yaml#/stockPurchase'
+  /stockpurchase/{id}:
+    $ref: './paths/stockpurchase.yaml#/stockPurchaseById'
 components:
   schemas:
     Stock:
@@ -40,3 +44,5 @@ components:
       $ref: './components/schemas/PurchasePrice.yaml'
     Sellingprice:
       $ref: './components/schemas/Sellingprice.yaml'
+    StockPurchase:
+      $ref: './components/schemas/StockPurchase.yaml'

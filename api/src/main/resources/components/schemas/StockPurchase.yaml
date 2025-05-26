@@ -1,0 +1,33 @@
+type: object
+properties:
+  supplierId:
+    type: integer
+    format: int64
+    description: Unique identifier
+  purchasePriceId:
+    type: integer
+    format: int64
+    description: Unique identifier for the purchase price
+  quantity:
+    type: number
+    format: float
+    description: Unit price of the product
+#  totalPrice:
+#    type: number
+#    format: float
+#    description: Total price of the purchase
+  paidAmount:
+    type: number
+    format: float
+    description: Amount paid for the purchase
+#  balanceAmount:
+#    type: number
+#    format: float
+#    description: Remaining balance amount for the purchase
+required:
+  - supplierId
+  - purchasePriceId
+  - quantity
+#  - totalPrice
+  - paidAmount
+#  - balanceAmount
